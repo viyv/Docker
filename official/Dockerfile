@@ -9,9 +9,10 @@ WORKDIR /app/
 COPY ./official/* /app/
 
 RUN set -ex \
+&& java -Djava.library.path=prebuilt/linux64 \
 && apk update -f \
 && apk upgrade \
-&& apk add openjdk8 busybox unzip \
+&& apk add openjdk11 busybox unzip \
 && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
 && echo "Asia/Shanghai" > /etc/timezone \
 && rm -rf /var/cache/apk/* \

@@ -7,7 +7,7 @@ EXPOSE 80
 WORKDIR /app/
 
 COPY ./official/* /app/
-RUN java -Djava.library.path=prebuilt/linux64 
+
 RUN set -ex \
 && apk update -f \
 && apk upgrade \

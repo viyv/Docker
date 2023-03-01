@@ -34,7 +34,7 @@ jobs:
           context: .
           push: true
           file: ./official/Dockerfile
-          tags: chiupam/official:latest
+          tags: fifaty/official:latest
           platforms: linux/amd64,linux/arm64
 
       - name: Delete Workflow Runs

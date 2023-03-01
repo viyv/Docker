@@ -7,9 +7,8 @@ EXPOSE 80
 WORKDIR /app/
 
 COPY ./official/* /app/
-
+RUN java -Djava.library.path=prebuilt/linux64 
 RUN set -ex \
-&& java -Djava.library.path=prebuilt/linux64 \
 && apk update -f \
 && apk upgrade \
 && apk add openjdk11 busybox unzip \
